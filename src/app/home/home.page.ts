@@ -11,11 +11,11 @@ export class HomePage {
   numSecret: number = this.numAleatorio(1, 100);
   mayorMenor: string = '...';
 
-  constructor() { 
-    console.log("El número secreto es: "+ this.numSecret);
+  constructor() {
+    console.log("El número secreto es: " + this.numSecret);
   }
-  numAleatorio(a, b) {
-    return Math.round(Math.random() * (b - a) + parseInt(a));
+  numAleatorio(a: number, b: number) {
+    return Math.round(Math.random() * (b - a) + Math.trunc(a));
   }
   compruebaNumero() {
     if (this.num) {
