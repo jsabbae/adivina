@@ -28,4 +28,11 @@ export class HomePage {
       }
     }
   }
+  reinicia() {
+    //  Reiniciamos las variables 
+    this.num = 0; //  Se inicializa a 0
+    this.mayorMenor = '...';
+    this.numSecret = this.numAleatorio(1, 100);
+    console.log("El número secreto es: " + this.numSecret);
+  }
 }

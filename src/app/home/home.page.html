@@ -11,6 +11,15 @@
     <ion-input type="number" min="1" max="100" [(ngModel)]="num"
       placeholder="Introduce un número del 1 al 100"></ion-input>
     <p>El número secreto es {{ mayorMenor }} que el número introducido</p>
-    <ion-button expand="block" (click)="compruebaNumero()">Adivina</ion-button>
+    <ion-card *ngIf="mayorMenor == 'igual'">
+      <ion-card-header>
+        ¡¡¡Enhorabuena!!!
+      </ion-card-header>
+      <ion-card-content>
+      Has acertado, el númereo secreto es {{num}}
+      </ion-card-content>
+    </ion-card>
+    <ion-button class="buton" expand="block" *ngIf="mayorMenor!='igual'" (click)="compruebaNumero()">Adivina</ion-button>
+    <ion-button expand="block" *ngIf="mayorMenor=='igual'" (click)="reinicia()">Volver a jugar</ion-button>
   </div>
 </ion-content>
